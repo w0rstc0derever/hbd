@@ -515,7 +515,7 @@
 
   function createBurst(px, py, superBurst = false) {
     const hue = rnd(0, 360);
-    const count = reduceMotion ? 15 : (superBurst ? 60 : 30);
+    const count = reduceMotion ? 25 : (superBurst ? 60 : 30);
 
     for (let i = 0; i < count; i++) {
       const angle = (i / count) * Math.PI * 2;
@@ -569,7 +569,7 @@
 
         if (p.y <= p.ty || p.vy > -2.5) {
           createBurst(p.x, p.y, p.super);
-          createConfetti(p.x, p.y, p.super ? 30 : 10);
+          createConfetti(p.x, p.y, p.super ? 40 : 20);
           particles.splice(i, 1);
         }
         continue;
@@ -662,7 +662,7 @@
       createConfetti(W * 0.1, H * 0.9, 40, 1.5);
       createConfetti(W * 0.9, H * 0.9, 40, 1.5);
 
-      for (let i = 0; i < 10; i++) setTimeout(spawnBalloon, i * 150);
+      for (let i = 0; i < 10; i++) setTimeout(spawnBalloon, i * 100);
 
       btn.classList.remove('wishing-state');
       btn.style.background = 'linear-gradient(135deg, var(--gold), var(--pink))';
